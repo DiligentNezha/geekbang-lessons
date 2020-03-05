@@ -1,12 +1,10 @@
-package org.geekbang.thinking.in.spring.dependency.verify;
+package org.geekbang.thinking.in.spring.ioc.dependency.verify;
 
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
-
-import java.util.Iterator;
 
 public class ObjectProviderDemo { // @Configuration 是非必须注解
     public static void main(String[] args) {

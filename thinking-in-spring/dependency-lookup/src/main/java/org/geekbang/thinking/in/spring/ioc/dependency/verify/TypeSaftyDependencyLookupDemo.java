@@ -1,4 +1,4 @@
-package org.geekbang.thinking.in.spring.dependency.verify;
+package org.geekbang.thinking.in.spring.ioc.dependency.verify;
 
 import org.geekbang.thinking.in.spring.ioc.overview.domain.User;
 import org.springframework.beans.BeansException;

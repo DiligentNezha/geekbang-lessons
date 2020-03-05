@@ -1,4 +1,4 @@
-package org.geekbang.thinking.in.spring.dependency.verify;
+package org.geekbang.thinking.in.spring.ioc.dependency.verify;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.HierarchicalBeanFactory;
