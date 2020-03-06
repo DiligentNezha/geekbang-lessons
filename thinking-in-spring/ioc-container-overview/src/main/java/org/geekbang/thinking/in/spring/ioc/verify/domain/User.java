@@ -1,13 +1,16 @@
 package org.geekbang.thinking.in.spring.ioc.verify.domain;
 
 import org.geekbang.thinking.in.spring.ioc.verify.enums.City;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.core.io.Resource;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class User {
+public class User implements BeanNameAware {
 
     private Long id;
 
@@ -22,6 +25,8 @@ public class User {
     private Map<String, Object> map;
 
     private Resource configFileLocation;
+
+    private String beanName;
 
     public Long getId() {
         return id;
@@ -86,6 +91,24 @@ public class User {
         return user;
     }
 
+    @PostConstruct
+    public void init() {
+        System.out.println("用户对象[" + beanName+ "]通过@PostConstruct初始化.......");
+    }
+
+    public void initMethod() {
+        System.out.println("用户对象[" + beanName+ "]执行 initMethod() 进行初始化.......");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("用户对象[" + beanName + "]通过@PreDestroy销毁.....");
+    }
+
+    public void destroyMethod() {
+        System.out.println("用户对象[" + beanName + "]执行 destroyMethod() 进行销毁.....");
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -96,6 +119,12 @@ public class User {
                 ", lifeCities=" + lifeCities +
                 ", map=" + map +
                 ", configFileLocation=" + configFileLocation +
+                ", beanName='" + beanName + '\'' +
                 '}';
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        this.beanName = name;
     }
 }
