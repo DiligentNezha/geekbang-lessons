@@ -2,7 +2,6 @@ package org.geekbang.thinking.in.spring.ioc.bean.verify;
 
 import org.geekbang.thinking.in.spring.ioc.verify.domain.User;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,7 +13,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -129,9 +127,9 @@ public class BeanScopeDemo implements DisposableBean {
 //        this.singletonUser1.destroy();
 
         System.out.println("当前 BeanScopeDemo Bean 正在销毁中....");
-        this.prototypeUser.destroy();
-        this.prototypeUser1.destroy();
-        this.prototypeUser2.destroy();
+        this.prototypeUser.preDestroy();
+        this.prototypeUser1.preDestroy();
+        this.prototypeUser2.preDestroy();
 
         for (Map.Entry<String, User> entry : users.entrySet()) {
             String beanName = entry.getKey();
@@ -140,7 +138,7 @@ public class BeanScopeDemo implements DisposableBean {
 
             if (beanDefinition.isPrototype()) {
                 User user = entry.getValue();
-                user.destroy();
+                user.preDestroy();
             }
 
         }

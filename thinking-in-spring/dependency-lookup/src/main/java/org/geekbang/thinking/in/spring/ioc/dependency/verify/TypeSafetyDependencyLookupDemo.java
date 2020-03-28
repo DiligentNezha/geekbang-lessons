@@ -7,12 +7,12 @@ import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class TypeSaftyDependencyLookupDemo {
+public class TypeSafetyDependencyLookupDemo {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
-        applicationContext.register(TypeSaftyDependencyLookupDemo.class);
+        applicationContext.register(TypeSafetyDependencyLookupDemo.class);
 
         applicationContext.refresh();
 
