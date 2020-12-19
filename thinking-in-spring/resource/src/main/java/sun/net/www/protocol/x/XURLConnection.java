@@ -52,6 +52,7 @@ public class XURLConnection extends URLConnection {
 
     }
 
+    @Override
     public InputStream getInputStream() throws IOException {
         return resource.getInputStream();
     }
