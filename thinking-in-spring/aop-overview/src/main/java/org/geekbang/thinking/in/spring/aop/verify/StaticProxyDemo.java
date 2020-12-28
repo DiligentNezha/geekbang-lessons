@@ -7,6 +7,6 @@ package org.geekbang.thinking.in.spring.aop.verify;
  */
 public class StaticProxyDemo {
     public static void main(String[] args) {
-        new EchoProxyService(new DefaultEchoService()).echo("good");
+        new ProxyEchoService(new DefaultEchoService()).echo("good");
     }
 }

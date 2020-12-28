@@ -5,11 +5,11 @@ package org.geekbang.thinking.in.spring.aop.verify;
  * @description
  * @date 2020/12/20
  */
-public class EchoProxyService implements EchoService{
+public class ProxyEchoService implements EchoService{
 
     private EchoService echoService;
 
-    public EchoProxyService(EchoService echoService) {
+    public ProxyEchoService(EchoService echoService) {
         this.echoService = echoService;
     }
 

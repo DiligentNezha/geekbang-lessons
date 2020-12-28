@@ -7,5 +7,5 @@ package org.geekbang.thinking.in.spring.aop.verify;
  */
 public interface EchoService {
 
-    String echo(String msg);
+    String echo(String msg) throws NullPointerException;
 }
